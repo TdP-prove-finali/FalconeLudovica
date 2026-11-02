@@ -5,23 +5,23 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
 
-<BorderPane prefHeight="640.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.cinema.FXMLController">
+<BorderPane prefHeight="730.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.cinema.FXMLController">
    <padding>
       <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
    </padding>
    <top>
-      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="barraAlto" alignment="CENTER_LEFT" spacing="14.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Anno:" />
-            <ComboBox fx:id="cmbAnno" onAction="#doSelezionaAnno" prefWidth="110.0" />
+            <Label fx:id="lblTitolo" text="Oltre il botteghino: chi guadagna davvero da un film" />
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" />
@@ -33,18 +33,25 @@
          <tabs>
             <Tab text="Analisi di un film">
                <content>
-                  <VBox spacing="10.0">
+                  <VBox fx:id="pannelloFilm" spacing="10.0">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Label text="Film dell'anno (ordinati per incasso):" />
-                        <ListView fx:id="lstFilm" prefHeight="170.0" />
+                        <TextFlow fx:id="lblSpiegazione" />
                         <HBox alignment="CENTER_LEFT" spacing="10.0">
                            <children>
-                              <Label text="Produttore-distributore:" />
+                              <Label fx:id="lblAnno1" text="Anno:" />
+                              <ComboBox fx:id="cmbAnno" onAction="#doSelezionaAnno" prefWidth="110.0" />
+                           </children>
+                        </HBox>
+                        <Label text="Film dell'anno (ordinati per incasso):" />
+                        <ListView fx:id="lstFilm" minHeight="147.0" prefHeight="173.0" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label fx:id="lblAccordoProduttore" text="Produttore-distributore:" />
                               <ComboBox fx:id="cmbAccordoProduttore" prefWidth="150.0" />
-                              <Label text="Distributore-esercente:" />
+                              <Label fx:id="lblAccordoEsercente" text="Distributore-esercente:" />
                               <ComboBox fx:id="cmbAccordoEsercente" prefWidth="150.0" />
                            </children>
                         </HBox>
@@ -56,18 +63,33 @@
                               <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" />
                            </children>
                         </HBox>
-                        <TextArea fx:id="txtFilm" editable="false" prefHeight="260.0" VBox.vgrow="ALWAYS" />
+                        <ScrollPane fitToWidth="true" prefHeight="180.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <TextFlow fx:id="txtFilm">
+                                 <padding>
+                                    <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+                                 </padding>
+                              </TextFlow>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </VBox>
                </content>
             </Tab>
             <Tab text="Portafoglio migliore">
                <content>
-                  <VBox spacing="10.0">
+                  <VBox fx:id="pannelloPortafoglio" spacing="10.0">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
+                        <TextFlow fx:id="lblSpiegazionePortafoglio" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label fx:id="lblAnno2" text="Anno:" />
+                              <ComboBox fx:id="cmbAnnoPortafoglio" onAction="#doSelezionaAnno" prefWidth="110.0" />
+                           </children>
+                        </HBox>
                         <HBox alignment="CENTER_LEFT" spacing="10.0">
                            <children>
                               <Label text="Budget massimo (milioni di $):" />
@@ -77,7 +99,15 @@
                               <Button fx:id="btnPortafoglio" mnemonicParsing="false" onAction="#doPortafoglio" text="Trova il portafoglio migliore" />
                            </children>
                         </HBox>
-                        <TextArea fx:id="txtPortafoglio" editable="false" prefHeight="440.0" VBox.vgrow="ALWAYS" />
+                        <ScrollPane fitToWidth="true" prefHeight="340.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <TextFlow fx:id="txtPortafoglio">
+                                 <padding>
+                                    <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+                                 </padding>
+                              </TextFlow>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </VBox>
                </content>
@@ -86,3 +116,4 @@
       </TabPane>
    </center>
 </BorderPane>
+

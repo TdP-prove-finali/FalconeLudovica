@@ -25,7 +25,6 @@ public class Model {
         return Calcolatore.spettatoriStimati(f, dao.getPrezzoMedioBiglietto(f.getAnno()));
     }
 
-    // i film del database, nello stesso anno, della stessa casa di produzione di f
     public List<Film> filmDelProduttore(Film f) {
         List<Film> risultato = new ArrayList<>();
         for (Film x : dao.getFilmByAnno(f.getAnno())) {
@@ -36,7 +35,6 @@ public class Model {
         return risultato;
     }
 
-    // i film del database, nello stesso anno, dello stesso distributore di f
     public List<Film> filmDelDistributore(Film f) {
         List<Film> risultato = new ArrayList<>();
         for (Film x : dao.getFilmByAnno(f.getAnno())) {

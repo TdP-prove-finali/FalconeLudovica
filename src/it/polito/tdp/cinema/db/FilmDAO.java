@@ -11,7 +11,6 @@ import it.polito.tdp.cinema.model.Film;
 
 public class FilmDAO {
 
-    // anni per cui nel database ci sono film (per la combo box)
     public List<Integer> getAnni() {
         String sql = "SELECT DISTINCT anno FROM film ORDER BY anno";
         List<Integer> anni = new ArrayList<>();
@@ -28,7 +27,6 @@ public class FilmDAO {
     }
     
 
-    // film di un anno, dal maggior incasso al minore
     public List<Film> getFilmByAnno(int anno) {
         String sql = "SELECT f.id, f.titolo, f.anno, p.nome AS produttore, d.nome AS distributore, "
                 + "f.budget, f.boxoffice_domestico, f.sett1, f.sett2, f.sett3, f.sett4 "
@@ -63,9 +61,7 @@ public class FilmDAO {
         }
         return film;
     }
-    
-
-    // prezzo medio del biglietto di un anno (per stimare gli spettatori)
+  
     public double getPrezzoMedioBiglietto(int anno) {
         String sql = "SELECT prezzo_medio_biglietto FROM mercato_annuale WHERE anno = ?";
         try (Connection conn = DBConnect.getConnection();

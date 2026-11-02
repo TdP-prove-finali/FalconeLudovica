@@ -2,14 +2,14 @@ package it.polito.tdp.cinema.model;
 
 public class Calcolatore {
 
-    // accordo distributore-esercente
+
     private static final double SLIDING_1 = 0.95;
     private static final double SLIDING_2 = 0.90;
     private static final double SLIDING_3 = 0.85;
     private static final double SLIDING_4 = 0.50;
     private static final double BIDDING = 0.95;
 
-    // accordo produttore-distributore
+    
     private static final double LEASING_PERCENTUALE_BUDGET = 1.25;
     private static final double PROFIT_QUOTA_PRODUTTORE = 0.80;
 

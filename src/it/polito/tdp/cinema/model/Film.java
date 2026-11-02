@@ -8,7 +8,7 @@ public class Film {
     private final String produttore;
     private final String distributore;
     private final long budget;
-    private final long boxOffice;   // incasso domestico totale
+    private final long boxOffice;  
     private final long sett1;
     private final long sett2;
     private final long sett3;
