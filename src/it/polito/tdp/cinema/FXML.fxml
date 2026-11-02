@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="640.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.cinema.FXMLController">
+   <padding>
+      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+   </padding>
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Anno:" />
+            <ComboBox fx:id="cmbAnno" onAction="#doSelezionaAnno" prefWidth="110.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Analisi di un film">
+               <content>
+                  <VBox spacing="10.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Film dell'anno (ordinati per incasso):" />
+                        <ListView fx:id="lstFilm" prefHeight="170.0" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label text="Produttore-distributore:" />
+                              <ComboBox fx:id="cmbAccordoProduttore" prefWidth="150.0" />
+                              <Label text="Distributore-esercente:" />
+                              <ComboBox fx:id="cmbAccordoEsercente" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnCalcolaFilm" mnemonicParsing="false" onAction="#doCalcolaFilm" text="Calcola guadagni" />
+                              <Button fx:id="btnGuadagnoProduttore" mnemonicParsing="false" onAction="#doGuadagnoProduttore" text="Guadagno annuale produttore" />
+                              <Button fx:id="btnGuadagnoDistributore" mnemonicParsing="false" onAction="#doGuadagnoDistributore" text="Guadagno annuale distributore" />
+                              <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" />
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtFilm" editable="false" prefHeight="260.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Portafoglio migliore">
+               <content>
+                  <VBox spacing="10.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label text="Budget massimo (milioni di $):" />
+                              <TextField fx:id="txtBudget" prefWidth="90.0" />
+                              <Label text="Max film:" />
+                              <TextField fx:id="txtN" prefWidth="50.0" />
+                              <Button fx:id="btnPortafoglio" mnemonicParsing="false" onAction="#doPortafoglio" text="Trova il portafoglio migliore" />
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtPortafoglio" editable="false" prefHeight="440.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
