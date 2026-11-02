@@ -8,7 +8,7 @@ public class DBConnect {
 
     private static final String URL = "jdbc:mariadb://localhost:3306/cinema";
     private static final String USER = "root";
-    private static final String PASSWORD = "0000";
+    private static final String PASSWORD = "";
 
     public static Connection getConnection() {
         try {
