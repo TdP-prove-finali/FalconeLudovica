@@ -5,6 +5,6 @@ Istruzioni per l'utilizzo dell'applicazione:
 - Al seguente link xxxxxxxxxxxxxxx è possibile trovare un video esplicativo della funzionalità dell'applicazione
 
 LICENZE
-Software: Apache License 2.0
-Relazione tecnica: Creative Commons BY-NC-SA
+- Software: Apache License 2.0
+- Relazione tecnica: Creative Commons BY-NC-SA
 
