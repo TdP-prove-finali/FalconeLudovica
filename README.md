@@ -3,7 +3,8 @@ Istruzioni per l'utilizzo dell'applicazione:
 - Aprire il file DBConnect e inserire utente e password personale di MariaDB
 - Aprire il progetto ed eseguire la classe Main contenuta nel package it.polito.tdp.cinema
 - Al seguente link https://youtu.be/bIv-qpnPP8M è possibile trovare un video esplicativo della funzionalità dell'applicazione
-
+- Nella cartella documenti è reperibile un elaborato dettagliato sull'applicazione
+  
 LICENZE
 - Software: Apache License 2.0
 - Relazione tecnica: Creative Commons BY-NC-SA
